@@ -1,5 +1,7 @@
 import random
+
 choice1 = ('R', 'P', 'S')
+
 
 def get_key(val, u, p):
     dict1 = {"you": u, "PC": p}
@@ -7,12 +9,16 @@ def get_key(val, u, p):
         if val == value:
             print(f"Pc's choice is {p}. So, the Winner is {key}")
 
+
 def rps(u, p):
-    dict2={"RS":"SR","SP":"PS","PR":"RP"}
     up = u + p
-    for key,value in dict2.items():
-        if up == key or up == value:
-            get_key(key[0], u, p)
+    if up == "RS" or up == "SR":
+        get_key("R", u, p)
+    if up == "SP" or up == "PS":
+        get_key("S", u, p)
+    if up == "PR" or up == "RP":
+        get_key("P", u, p)
+
 
 while True:
     PcChoice = choice1[random.randint(0, 2)]
